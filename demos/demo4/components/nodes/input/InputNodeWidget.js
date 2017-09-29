@@ -5,8 +5,8 @@ import { InputNodeModel } from './InputNodeModel';
 export class InputNodeWidget extends React.Component {
   static defaultProps = {
     node: null,
-    color: 'rgb(192, 255, 0)'
-  };
+    color: '#c0392b'
+  }
 
   onRemove() {
     const { node, diagramEngine } = this.props;
@@ -28,7 +28,7 @@ export class InputNodeWidget extends React.Component {
   }
 
   render() {
-    const { node, displayOnly, color: displayColor } = this.props;
+    const { node, displayOnly, color: displayColor, className } = this.props;
     const { name, color } = node;
     const style = {};
     if (color || displayColor) {
@@ -36,7 +36,7 @@ export class InputNodeWidget extends React.Component {
     }
 
     return (
-      <div className='basic-node' style={style}>
+      <div className={`basic-node ${className}`} style={style}>
         <div className='title'>
           <div className='name'>
             {name}

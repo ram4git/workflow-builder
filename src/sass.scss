@@ -74,8 +74,8 @@
   }
 
   .port {
-    width: 15px;
-    height: 15px;
+    // width: 15px;
+    // height: 15px;
     background: rgba(white,0.1);
     &:hover,&.selected {
       background: rgb(192,255,0);
@@ -116,7 +116,7 @@
 
     .ports {
       display: flex;
-      background-image: linear-gradient(rgba(black,0.1),rgba(black,0.2));
+      //background-image: linear-gradient(rgba(black,0.1),rgba(black,0.2));
       .in, .out {
         flex-grow: 1;
         display: flex;

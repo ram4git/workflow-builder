@@ -1,8 +1,8 @@
 import React from 'react';
 import * as RJD from '../../../../../src/main';
-import { ConnectionNodeModel } from './ConnectionNodeModel';
+import { ConditionNodeModel } from './ConditionNodeModel';
 
-export class ConnectionNodeWidget extends React.Component {
+export class ConditionNodeWidget extends React.Component {
   static defaultProps = {
     node: null,
     color: 'rgb(224, 98, 20)'
@@ -19,7 +19,7 @@ export class ConnectionNodeWidget extends React.Component {
     let inputNode = node;
 
     if (displayOnly) {
-      inputNode = new ConnectionNodeModel(node.name, color);
+      inputNode = new ConditionNodeModel(node.name, color);
     }
 
     return inputNode.getInPort ? <RJD.DefaultPortLabel model={inputNode.getInPort()} key='in-port' /> : null;
@@ -30,7 +30,7 @@ export class ConnectionNodeWidget extends React.Component {
     let outputNode = node;
 
     if (displayOnly) {
-      outputNode = new ConnectionNodeModel(node.name, color);
+      outputNode = new ConditionNodeModel(node.name, color);
     }
 
     return outputNode.getOutPort ? <RJD.DefaultPortLabel model={outputNode.getOutPort()} key='out-port' /> : null;
@@ -38,7 +38,7 @@ export class ConnectionNodeWidget extends React.Component {
 
   render() {
     const { node, displayOnly, color: displayColor } = this.props;
-    const { name, color, content='\{ BRIEF DESCRIPTION \}' } = node;
+    const { name, color, content='\{ CONDITION \? YES \: NO \}' } = node;
     const style = {};
     if (color || displayColor) {
       style.background = color || displayColor;
@@ -70,4 +70,4 @@ export class ConnectionNodeWidget extends React.Component {
   }
 }
 
-export const ConnectionNodeWidgetFactory = React.createFactory(ConnectionNodeWidget);
+export const ConditionNodeWidgetFactory = React.createFactory(ConditionNodeWidget);

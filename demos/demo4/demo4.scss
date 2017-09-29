@@ -9,18 +9,59 @@ html, body, #root {
   flex-direction: column;
 }
 
+
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #2c3e50;
+  padding: 10px;
+  color: #ecf0f1;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+h1.App-title {
+  margin: 0 0;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.basic-node.start {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50%;
+}
+
+.basic-node.stop {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50%;
+}
+
 .parent-container {
   flex: 1;
   display: flex;
   flex-direction: row;
+  height: 90%;
 
   .nodes-panel {
     flex: 0 0 8rem;
     display: flex;
     flex-direction: column;
-    max-width: 10rem;
-    background: rgb(120, 120, 120);
-    border-right: 2px solid black;
+    min-width: 15rem;
+    background: #fff;
     padding: 1rem;
 
     .node-wrapper {
@@ -28,8 +69,12 @@ html, body, #root {
       margin-bottom: 1rem;
 
       .basic-node {
-        width: 100px;
+        width: 200px;
       }
+    }
+
+    .ports {
+      display: none;
     }
   }
 
@@ -37,10 +82,17 @@ html, body, #root {
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 
     .react-js-diagrams-canvas {
       flex: 1;
-      background: rgb(60, 60, 60);
+      background: #ecf0f1;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      .basic-node {
+        width: 200px;
+        min-height: 80px;
+      }
     }
   }
 
@@ -52,13 +104,33 @@ html, body, #root {
 }
 
 // Diagram SASS
-.port{
-  width: 15px;
-  height: 15px;
-  background: rgba(white,0.1);
-  &:hover,&.selected{
-    background: rgb(192,255,0);
+// .out-port {
+//   .port{
+//     // width: 15px;
+//     // height: 15px;
+//     background: rgba(white,0.1);
+//     border: 1px solid;
+//     border-radius: 12px;
+//     margin: 10px;
+//     padding: 4px;
+//     &:hover,&.selected{
+//       background: rgb(192,255,0);
+//     }
+//     background: black;
+//   }
+// }
+
+.in-port, .out-port {
+  .port{
+    font-size: 20px;
+    color: #2c3e50;
   }
+}
+
+.bottonGroup {
+  position: absolute;
+  left: 1200px;
+  top: 80px;
 }
 
 .basic-node {
@@ -70,11 +142,25 @@ html, body, #root {
   overflow: visible;
   font-size: 11px;
   box-shadow: 0 0 10px rgba(black,0.5);
+  position: relative;
+
+  &.start {
+    .title {
+      background: rgba(0, 0, 0, 0)
+    }
+  }
+
+  &.stop {
+    .title {
+      background: rgba(0, 0, 0, 0)
+    }
+  }
 
   .title{
-    background: rgba(black,0.3);
+    // background: rgba(black,0.3);
     display: flex;
     white-space: nowrap;
+    background: rgba(0, 0, 0, 0.3);
     >*{
       align-self: center;
     }
@@ -92,17 +178,34 @@ html, body, #root {
     .name{
       flex-grow: 1;
       padding: 5px 5px;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: bolder;
     }
   }
 
   .ports{
     display: flex;
-    background-image: linear-gradient(rgba(black,0.1),rgba(black,0.2));
+    background: rgba(0, 0, 0, 0.3);
+    //background-image: linear-gradient(rgba(black,0.1),rgba(black,0.2));
 
     .in, .out{
       flex-grow: 1;
       display: flex;
       flex-direction: column;
+      position: absolute;
+    }
+
+    .in {
+      top: -16px;
+      left: 50%;
+    }
+
+    .out {
+      bottom: -16px;
+      left: 50%;
     }
 
     .in-port,.out-port{
@@ -113,10 +216,11 @@ html, body, #root {
       }
       .name{
         padding: 0 5px;
+        display: none;
       }
     }
 
-    .out-port{
+    .in-port,.out-port{
       justify-content: flex-end;
       .name{
         justify-content: flex-end;
@@ -125,4 +229,3 @@ html, body, #root {
     }
   }
 }
-

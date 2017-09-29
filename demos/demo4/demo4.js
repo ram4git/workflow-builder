@@ -14,24 +14,29 @@ class Demo extends React.Component {
     const { model, selectedNode, onNodeSelected, updateModel, onUndo, onRedo, canUndo, canRedo } = this.props;
 
   	return (
-  	  <DragDropContextProvider backend={HTML5Backend}>
-    	  <div className='parent-container'>
-    	    <NodesPanel />
-  	      <Diagram
-  	        model={model}
-  	        updateModel={updateModel}
-  	        onNodeSelected={onNodeSelected}
-  	       />
-  	      <Controls
-  	        selectedNode={selectedNode}
-  	        onUndo={onUndo}
-  	        onRedo={onRedo}
-  	        canUndo={canUndo}
-  	        canRedo={canRedo}
-  	       />
-    	  </div>
-  	  </DragDropContextProvider>
-  	);
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Workflow Builder</h1>
+        </header>
+        <DragDropContextProvider backend={HTML5Backend}>
+          <div className='parent-container'>
+            <NodesPanel />
+            <Diagram
+              model={model}
+              updateModel={updateModel}
+              onNodeSelected={onNodeSelected}
+            />
+            <Controls
+              selectedNode={selectedNode}
+              onUndo={onUndo}
+              onRedo={onRedo}
+              canUndo={canUndo}
+              canRedo={canRedo}
+            />
+          </div>
+        </DragDropContextProvider>
+      </div>
+    );
   }
 }
 

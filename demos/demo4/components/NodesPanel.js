@@ -3,19 +3,23 @@ import { DragWrapper } from './DragWrapper';
 import { OutputNodeWidget } from './nodes/output/OutputNodeWidget';
 import { InputNodeWidget } from './nodes/input/InputNodeWidget';
 import { ConnectionNodeWidget } from './nodes/connection/ConnectionNodeWidget';
+import { ConditionNodeWidget } from './nodes/condition/ConditionNodeWidget';
 
 class Node extends React.Component {
   renderNode() {
-    const { type, color } = this.props;
+    const { type, color, className, name } = this.props;
 
     if (type === 'output') {
-      return <OutputNodeWidget node={{ name: 'Output Node' }} displayOnly />;
+      return <OutputNodeWidget node={{ name }} displayOnly className={className} />;
     }
     if (type === 'input') {
-      return <InputNodeWidget node={{ name: 'Input Node' }} displayOnly />;
+      return <InputNodeWidget node={{ name }} displayOnly className={className} />;
     }
     if (type === 'connection') {
-      return <ConnectionNodeWidget node={{ name: 'Connection Node' }} color={color} displayOnly />;
+      return <ConnectionNodeWidget node={{ name }} color={color} displayOnly className={className} />;
+    }
+    if (type === 'condition') {
+      return <ConditionNodeWidget node={{ name }} color={color} displayOnly className={className} />;
     }
     console.warn('Unknown node type');
     return null;
@@ -37,19 +41,22 @@ export class NodesPanel extends React.Component {
     return (
       <div className='nodes-panel'>
         <div className='node-wrapper'>
-          <Node type='output' />
+          <Node type='output' className="start" name="start" color="rgb(26, 188, 156, 0.3)"/>
         </div>
         <div className='node-wrapper'>
-          <Node type='connection' color='rgb(224, 98, 20)' />
+          <Node type='input' className="stop" name="stop" color="#c0392b"/>
         </div>
         <div className='node-wrapper'>
-          <Node type='connection' color='rgb(157, 13, 193)' />
+          <Node type='output' className="output" name="begin" color="#1abc9c"/>
         </div>
         <div className='node-wrapper'>
-          <Node type='connection' color='rgb(12, 193, 180)' />
+          <Node type='connection' color="#2980b9" name="connector"/>
         </div>
         <div className='node-wrapper'>
-          <Node type='input' />
+          <Node type='condition' className="diamond" name="CONDITION" color="#95a5a6"/>
+        </div>
+        <div className='node-wrapper'>
+          <Node type='input' className="input" name="end" color="#c0392b"/>
         </div>
       </div>
     );

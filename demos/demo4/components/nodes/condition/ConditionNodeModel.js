@@ -1,9 +1,11 @@
-  import _ from 'lodash';
+import _ from 'lodash';
 import * as RJD from '../../../../../src/main';
 
-export class InputNodeModel extends RJD.NodeModel {
-  constructor(name = 'Untitled', color = '#c0392b') {
-    super('input');
+export class ConditionNodeModel extends RJD.NodeModel {
+  constructor(name = 'Untitled', color = 'rgb(224, 98, 20)') {
+    super('condition');
+    //this.addPort(new RJD.DefaultPortModel(false, 'output', 'Yes'));
+    this.addPort(new RJD.DefaultPortModel(false, 'output', 'No'));
     this.addPort(new RJD.DefaultPortModel(true, 'input', 'In'));
     this.name = name;
     this.color = color;
@@ -22,7 +24,11 @@ export class InputNodeModel extends RJD.NodeModel {
     });
   }
 
-  getInPorts() {
-    return _.filter(this.ports, portModel => !portModel.out);
+  getInPort() {
+    return this.ports.input;
+  }
+
+  getOutPort() {
+    return this.ports.output;
   }
 }

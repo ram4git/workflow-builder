@@ -5,6 +5,9 @@ import * as RJD from '../../../src/main';
 import { OutputNodeModel } from './nodes/output/OutputNodeModel';
 import { InputNodeModel } from './nodes/input/InputNodeModel';
 import { ConnectionNodeModel } from './nodes/connection/ConnectionNodeModel';
+import { ConditionNodeModel } from './nodes/condition/ConditionNodeModel';
+//import { DiamondNodeModel } from './nodes/diamond/DiamondNodeModel';
+
 import { diagramEngine } from './Engine';
 
 // Setup the diagram model
@@ -28,6 +31,9 @@ const nodesTarget = {
     }
     if (item.type === 'connection') {
       node = new ConnectionNodeModel('Connection Node', item.color);
+    }
+    if (item.type === 'condition') {
+      node = new ConditionNodeModel('Decision Node', item.color);
     }
 
     node.x = x;

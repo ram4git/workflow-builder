@@ -9,7 +9,7 @@ export class PortWidget extends React.Component {
   }
 
   render() {
-    const { name, node } = this.props;
+    const { name, node, showLabel, isIn } = this.props;
     return (
       <div
         className={`port${(this.state.selected ? ' selected' : '')}`}
@@ -17,7 +17,9 @@ export class PortWidget extends React.Component {
         onMouseLeave={() => this.setState({ selected: false })}
         data-name={name}
         data-nodeid={node.getID()}
-      />
+      >
+      {showLabel ? name : (isIn ? '▼' : '▲')}
+      </div>
     );
   }
 }
