@@ -61,7 +61,7 @@ export class ConnectionNodeWidget extends React.Component {
           <div className='in'>
             {this.getInPort()}
           </div>
-          <div className='out'>
+          <div className='out labelButtons'>
             {this.getOutPort()}
           </div>
         </div>

@@ -92,6 +92,9 @@ h1.App-title {
       .basic-node {
         width: 200px;
         min-height: 80px;
+        .content {
+          margin-bottom: 30px;
+        }
       }
     }
   }
@@ -104,21 +107,25 @@ h1.App-title {
 }
 
 // Diagram SASS
-// .out-port {
-//   .port{
-//     // width: 15px;
-//     // height: 15px;
-//     background: rgba(white,0.1);
-//     border: 1px solid;
-//     border-radius: 12px;
-//     margin: 10px;
-//     padding: 4px;
-//     &:hover,&.selected{
-//       background: rgb(192,255,0);
-//     }
-//     background: black;
-//   }
-// }
+.labelButtons {
+  .port{
+    // width: 15px;
+    // height: 15px;
+    background: rgba(white,0.1);
+    border: 1px solid;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 4px;
+    &:hover,&.selected{
+      background: rgb(192,255,0);
+      color: black !important;
+
+    }
+    background: black;
+    color: white !important;
+    font-size: 14px !important;
+  }
+}
 
 .in-port, .out-port {
   .port{
@@ -196,16 +203,20 @@ h1.App-title {
       display: flex;
       flex-direction: column;
       position: absolute;
+      justify-content: center;
+      width: 100%
     }
 
     .in {
       top: -16px;
-      left: 50%;
     }
 
     .out {
       bottom: -16px;
-      left: 50%;
+      &.labelButtons {
+        width: 100%;
+        bottom: -24px;
+      }
     }
 
     .in-port,.out-port{
@@ -221,10 +232,10 @@ h1.App-title {
     }
 
     .in-port,.out-port{
-      justify-content: flex-end;
+      justify-content: center;
       .name{
-        justify-content: flex-end;
-        text-align: right;
+        justify-content: center;
+        text-align: center;
       }
     }
   }
