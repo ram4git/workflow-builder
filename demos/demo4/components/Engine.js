@@ -8,6 +8,9 @@ import { ConnectionWidgetFactory } from './nodes/connection/ConnectionWidgetFact
 import { ConnectionNodeFactory } from './nodes/connection/ConnectionInstanceFactories';
 import { ConditionWidgetFactory } from './nodes/condition/ConditionWidgetFactory';
 import { ConditionNodeFactory } from './nodes/condition/ConditionInstanceFactories';
+import { Condition3WayWidgetFactory } from './nodes/condition/Condition3WayWidgetFactory';
+import { Condition3WayNodeFactory } from './nodes/condition/Condition3WayInstanceFactories';
+
 // import { DiamondWidgetFactory } from './nodes/diamond/DiamondWidgetFactory';
 // import { DiamondNodeFactory, DiamondPortFactory } from './nodes/diamond/DiamondInstanceFactories';
 
@@ -19,6 +22,7 @@ diagramEngine.registerNodeFactory(new OutputWidgetFactory());
 diagramEngine.registerNodeFactory(new InputWidgetFactory());
 diagramEngine.registerNodeFactory(new ConnectionWidgetFactory());
 diagramEngine.registerNodeFactory(new ConditionWidgetFactory());
+diagramEngine.registerNodeFactory(new Condition3WayWidgetFactory());
 //diagramEngine.registerNodeFactory(new DiamondWidgetFactory());
 
 
@@ -30,5 +34,6 @@ diagramEngine.registerInstanceFactory(new OutputNodeFactory());
 diagramEngine.registerInstanceFactory(new InputNodeFactory());
 diagramEngine.registerInstanceFactory(new ConnectionNodeFactory());
 diagramEngine.registerInstanceFactory(new ConditionNodeFactory());
+diagramEngine.registerInstanceFactory(new Condition3WayNodeFactory());
 //diagramEngine.registerInstanceFactory(new DiamondNodeFactory());
 //diagramEngine.registerInstanceFactory(new DiamondPortFactory());

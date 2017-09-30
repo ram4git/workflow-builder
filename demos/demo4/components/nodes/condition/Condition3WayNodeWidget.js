@@ -1,8 +1,8 @@
 import React from 'react';
 import * as RJD from '../../../../../src/main';
-import { ConditionNodeModel } from './ConditionNodeModel';
+import { Condition3WayNodeModel } from './Condition3WayNodeModel';
 
-export class ConditionNodeWidget extends React.Component {
+export class Condition3WayNodeWidget extends React.Component {
   static defaultProps = {
     node: null,
     color: 'rgb(224, 98, 20)'
@@ -19,7 +19,7 @@ export class ConditionNodeWidget extends React.Component {
     let inputNode = node;
 
     if (displayOnly) {
-      inputNode = new ConditionNodeModel(node.name, color);
+      inputNode = new Condition3WayNodeModel(node.name, color);
     }
 
     return inputNode.getInPort ? <RJD.DefaultPortLabel model={inputNode.getInPort()} key='in-port' /> : null;
@@ -30,12 +30,13 @@ export class ConditionNodeWidget extends React.Component {
     let outputNode = node;
 
     if (displayOnly) {
-      outputNode = new ConditionNodeModel(node.name, color);
+      outputNode = new Condition3WayNodeModel(node.name, color);
     }
     return (
-      <div className="twoPorts">
+      <div className="threePorts">
         <RJD.DefaultPortLabel model={outputNode.getOutPort(1)} key='out-port1' />
         <RJD.DefaultPortLabel model={outputNode.getOutPort(2)} key='out-port2' />
+        <RJD.DefaultPortLabel model={outputNode.getOutPort(3)} key='out-port3' />
       </div>
     );
     //return outputNode.getOutPort ? <RJD.DefaultPortLabel model={outputNode.getOutPort()} key='out-port' /> : null;
@@ -75,4 +76,4 @@ export class ConditionNodeWidget extends React.Component {
   }
 }
 
-export const ConditionNodeWidgetFactory = React.createFactory(ConditionNodeWidget);
+export const Condition3WayNodeWidgetFactory = React.createFactory(Condition3WayNodeWidget);

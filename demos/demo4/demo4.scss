@@ -238,5 +238,18 @@ h1.App-title {
         text-align: center;
       }
     }
+
+    .twoPorts {
+      display: flex;
+      .out-port {
+        width: 50%;
+      }
+    }
+    .threePorts {
+      display: flex;
+      .out-port {
+        width: 33.34%;
+      }
+    }
   }
 }

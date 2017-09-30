@@ -6,6 +6,8 @@ import { OutputNodeModel } from './nodes/output/OutputNodeModel';
 import { InputNodeModel } from './nodes/input/InputNodeModel';
 import { ConnectionNodeModel } from './nodes/connection/ConnectionNodeModel';
 import { ConditionNodeModel } from './nodes/condition/ConditionNodeModel';
+import { Condition3WayNodeModel } from './nodes/condition/Condition3WayNodeModel';
+
 //import { DiamondNodeModel } from './nodes/diamond/DiamondNodeModel';
 
 import { diagramEngine } from './Engine';
@@ -22,23 +24,31 @@ const nodesTarget = {
     const y = pageY - top - offsetY;
     const item = monitor.getItem();
 
-    let node;
+    let newNode;
     if (item.type === 'output') {
-      node = new OutputNodeModel('Output Node');
+      const { node } = monitor.getItem().children.props;
+      newNode = new OutputNodeModel(node.name);
     }
     if (item.type === 'input') {
-      node = new InputNodeModel('Input Node');
+      const { node } = monitor.getItem().children.props;
+      newNode = new InputNodeModel(node.name);
     }
     if (item.type === 'connection') {
-      node = new ConnectionNodeModel('Connection Node', item.color);
+      const { node } = monitor.getItem().children.props;
+      newNode = new ConnectionNodeModel(node.name, item.color);
     }
     if (item.type === 'condition') {
-      node = new ConditionNodeModel('Decision Node', item.color);
+      const { node } = monitor.getItem().children.props;
+      newNode = new ConditionNodeModel(node.name, item.color);
+    }
+    if (item.type === 'condition3way') {
+      const { node } = monitor.getItem().children.props;
+      newNode = new Condition3WayNodeModel(node.name, item.color);
     }
 
-    node.x = x;
-    node.y = y;
-    diagramModel.addNode(node);
+    newNode.x = x;
+    newNode.y = y;
+    diagramModel.addNode(newNode);
     props.updateModel(diagramModel.serializeDiagram());
   },
 };

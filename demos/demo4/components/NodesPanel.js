@@ -4,6 +4,8 @@ import { OutputNodeWidget } from './nodes/output/OutputNodeWidget';
 import { InputNodeWidget } from './nodes/input/InputNodeWidget';
 import { ConnectionNodeWidget } from './nodes/connection/ConnectionNodeWidget';
 import { ConditionNodeWidget } from './nodes/condition/ConditionNodeWidget';
+import { Condition3WayNodeWidget } from './nodes/condition/Condition3WayNodeWidget';
+
 
 class Node extends React.Component {
   renderNode() {
@@ -20,6 +22,9 @@ class Node extends React.Component {
     }
     if (type === 'condition') {
       return <ConditionNodeWidget node={{ name }} color={color} displayOnly className={className} />;
+    }
+    if (type === 'condition3way') {
+      return <Condition3WayNodeWidget node={{ name }} color={color} displayOnly className={className} />;
     }
     console.warn('Unknown node type');
     return null;
@@ -54,6 +59,9 @@ export class NodesPanel extends React.Component {
         </div>
         <div className='node-wrapper'>
           <Node type='condition' className="diamond" name="CONDITION" color="#95a5a6"/>
+        </div>
+        <div className='node-wrapper'>
+          <Node type='condition3way' className="diamond" name="3 WAY CONDITION" color="#95a5a6"/>
         </div>
         <div className='node-wrapper'>
           <Node type='input' className="input" name="end" color="#c0392b"/>

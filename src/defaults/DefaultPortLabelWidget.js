@@ -10,7 +10,7 @@ export class DefaultPortLabel extends React.Component {
   render() {
     const { model } = this.props;
     const port = (
-      <PortWidget name={model.name} node={model.getParent()}  isIn={model.in}/>
+      <PortWidget name={model.name} label={model.label} node={model.getParent()}  isIn={model.in}/>
     );
     // const label = (
     //   <div className='name'>

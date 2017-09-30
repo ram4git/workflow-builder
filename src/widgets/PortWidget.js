@@ -9,7 +9,7 @@ export class PortWidget extends React.Component {
   }
 
   render() {
-    const { name, node, isIn } = this.props;
+    const { name, node, isIn, label } = this.props;
     const isTerminalNode = node.nodeType === 'input' || node.nodeType === 'output';
     return (
       <div
@@ -19,7 +19,7 @@ export class PortWidget extends React.Component {
         data-name={name}
         data-nodeid={node.getID()}
       >
-      {isIn ? '▼' : (isTerminalNode ? '▼' : name)}
+      {isIn ? '▼' : (isTerminalNode ? '▼' : label || name)}
       </div>
     );
   }
