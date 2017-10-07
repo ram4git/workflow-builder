@@ -179,7 +179,7 @@ export class DefaultLinkWidget extends React.Component {
     let paths = [];
 
     // Draw the line
-    if (points.length === 2) {
+    if (points.length === 1) {
       paths = this.drawLine();
     } else {
       paths = this.drawAdvancedLine();
