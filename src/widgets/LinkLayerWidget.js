@@ -66,11 +66,11 @@ export class LinkLayerWidget extends React.Component {
     return (
       <svg style={svgStyle}>
         <defs>
-          <pattern id="small-grid" patternUnits="userSpaceOnUse" x="0" y="0" width="18" height="18" viewBox="0 0 18 18">
-            <rect x="-0.5" y="-0.5" width="18" height="18" className="stroke"/>
+          <pattern id="small-grid" patternUnits="userSpaceOnUse" x="0" y="0" width="20" height="20" viewBox="0 0 20 20">
+            <rect x="-0.5" y="-0.5" width="20" height="20" className="stroke"/>
           </pattern>
-          <pattern id="big-grid" patternUnits="userSpaceOnUse" x="0" y="0" width="126" height="126" viewBox="0 0 126 126">
-            <rect x="-0.5" y="-0.5" width="126" height="126" className="square" fill="url(#small-grid)"/>
+          <pattern id="big-grid" patternUnits="userSpaceOnUse" x="0" y="0" width="140" height="140" viewBox="0 0 140 140">
+            <rect x="-0.5" y="-0.5" width="140" height="140" className="square" fill="url(#small-grid)"/>
           </pattern>
         </defs>
         <rect x="-1000" y="-1000" width="100000" height="100000" fill="url(#big-grid)"/>

@@ -23249,7 +23249,7 @@ var DefaultLinkWidget = exports.DefaultLinkWidget = (_temp = _class = function (
       var paths = [];
 
       // Draw the line
-      if (points.length === 2) {
+      if (points.length === 1) {
         paths = this.drawLine();
       } else {
         paths = this.drawAdvancedLine();
@@ -25463,8 +25463,8 @@ var LinkLayerWidget = exports.LinkLayerWidget = function (_React$Component) {
             _react2.default.createElement('rect', { x: '-0.5', y: '-0.5', width: '126', height: '126', className: 'square', fill: 'url(#small-grid)' })
           )
         ),
-        this.generateLinks(),
-        _react2.default.createElement('rect', { x: '-1000', y: '-1000', width: '100000', height: '100000', fill: 'url(#big-grid)' })
+        _react2.default.createElement('rect', { x: '-1000', y: '-1000', width: '100000', height: '100000', fill: 'url(#big-grid)' }),
+        this.generateLinks()
       );
     }
   }]);
