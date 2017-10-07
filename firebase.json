@@ -3,11 +3,11 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "demos",
+    "public": "demos/demo4",
     "rewrites": [
       {
         "source": "/*/*",
-        "destination": "/demos/index.html"
+        "destination": "/index.html"
       }
     ]
   }

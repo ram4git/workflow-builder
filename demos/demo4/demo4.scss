@@ -86,7 +86,6 @@ h1.App-title {
 
     .react-js-diagrams-canvas {
       flex: 1;
-      background: #ecf0f1;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
       .basic-node {
@@ -96,6 +95,19 @@ h1.App-title {
           margin-bottom: 30px;
         }
       }
+
+      svg {
+        background:#fff;
+        .square {
+          stroke: #95a5a6;
+          stroke-width:1;
+        }
+        .stroke {
+          stroke: #bdc3c7;
+          fill: none;
+        }
+      }
+
     }
   }
 

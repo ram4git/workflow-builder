@@ -10,6 +10,7 @@ export class Controls extends React.Component {
   	    <div className="bottonGroup">
   	      <button onClick={onUndo} disabled={!canUndo}  className="fa fa-reply" aria-hidden="true"></button>
   	      <button onClick={onRedo} disabled={!canRedo} className="fa fa-share" aria-hidden="true"></button>
+          <button onClick={onUndo} disabled={!canUndo} className="fa fa-save" aria-hidden="true"></button>
   	    </div>
   	    <pre>
   	      {content}
