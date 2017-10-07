@@ -73,8 +73,8 @@ export class LinkLayerWidget extends React.Component {
             <rect x="-0.5" y="-0.5" width="126" height="126" className="square" fill="url(#small-grid)"/>
           </pattern>
         </defs>
-        {this.generateLinks()}
         <rect x="-1000" y="-1000" width="100000" height="100000" fill="url(#big-grid)"/>
+        {this.generateLinks()}
       </svg>
     );
   }

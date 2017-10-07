@@ -10,9 +10,10 @@
     "lint": "eslint src --rulesdir eslint-rules",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register test/.config.js test/**/*-test.js",
     "prepublish": "npm run build",
+    "publish": "firebase deploy",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --presets es2015,es2016,es2017,stage-0",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --presets es2015,es2016,es2017,stage-0",
-    "build": "npm run build:commonjs && npm run build:es"
+    "build": "npm run build:commonjs && npm run build:es && node_modules/.bin/webpack"
   },
   "keywords": [
     "web",

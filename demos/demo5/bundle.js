@@ -25444,10 +25444,27 @@ var LinkLayerWidget = exports.LinkLayerWidget = function (_React$Component) {
         height: '100%'
       };
 
+      //GRID PATTERN https://gist.github.com/DmitryBaranovskiy/4281741?short_path=db4c0c6
+
       return _react2.default.createElement(
         'svg',
         { style: svgStyle },
-        this.generateLinks()
+        _react2.default.createElement(
+          'defs',
+          null,
+          _react2.default.createElement(
+            'pattern',
+            { id: 'small-grid', patternUnits: 'userSpaceOnUse', x: '0', y: '0', width: '18', height: '18', viewBox: '0 0 18 18' },
+            _react2.default.createElement('rect', { x: '-0.5', y: '-0.5', width: '18', height: '18', className: 'stroke' })
+          ),
+          _react2.default.createElement(
+            'pattern',
+            { id: 'big-grid', patternUnits: 'userSpaceOnUse', x: '0', y: '0', width: '126', height: '126', viewBox: '0 0 126 126' },
+            _react2.default.createElement('rect', { x: '-0.5', y: '-0.5', width: '126', height: '126', className: 'square', fill: 'url(#small-grid)' })
+          )
+        ),
+        this.generateLinks(),
+        _react2.default.createElement('rect', { x: '-1000', y: '-1000', width: '100000', height: '100000', fill: 'url(#big-grid)' })
       );
     }
   }]);
