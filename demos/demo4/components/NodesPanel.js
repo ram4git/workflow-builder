@@ -12,10 +12,10 @@ class Node extends React.Component {
     const { type, color, className, name } = this.props;
 
     if (type === 'output') {
-      return <OutputNodeWidget node={{ name }} displayOnly className={className} />;
+      return <OutputNodeWidget node={{ name }}  className={className} />;
     }
     if (type === 'input') {
-      return <InputNodeWidget node={{ name }} displayOnly className={className} />;
+      return <InputNodeWidget node={{ name }}  className={className} />;
     }
     if (type === 'connection') {
       return <ConnectionNodeWidget node={{ name }} color={color} displayOnly className={className} />;

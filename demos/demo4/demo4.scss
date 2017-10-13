@@ -63,6 +63,7 @@ h1.App-title {
     min-width: 15rem;
     background: #fff;
     padding: 1rem;
+    margin-bottom: 120px;
 
     .node-wrapper {
       flex: 0 0 auto;
@@ -83,6 +84,8 @@ h1.App-title {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    margin-bottom: 100px;
+    margin-right: 10px;
 
     .react-js-diagrams-canvas {
       flex: 1;
@@ -99,12 +102,14 @@ h1.App-title {
       svg {
         background:#fff;
         .square {
-          stroke: #95a5a6;
+          stroke: #2980b9;
           stroke-width:1;
+          opacity: 0.6;
         }
         .stroke {
-          stroke: #bdc3c7;
+          stroke: #3498db;
           fill: none;
+          opacity: 0.4;
         }
       }
 
@@ -115,6 +120,28 @@ h1.App-title {
     flex: 0 0 20rem;
     max-width: 20rem;
     overflow: auto;
+    margin-bottom: 120px;
+    display: none; /* REMOVE LATER WHEN EDIT IS ALLOWED */
+  }
+
+  .savedFlows {
+    position: fixed;
+    bottom: 4px;
+    height: 120px;
+    width: 100%;
+    background: #ecf0f1;
+
+    .workFlow {
+      width: 80px;
+      height: 100px;
+      background: #16a085;
+      word-wrap: break-word;
+      margin: 10px 10px;
+      border-radius: 4px;
+      float: left;
+      display: inline-block;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
   }
 }
 

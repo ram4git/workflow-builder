@@ -58,6 +58,8 @@ const nodesTarget = {
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop()
 }))
+
+
 export class Diagram extends React.Component {
   componentDidMount() {
     const { model } = this.props;

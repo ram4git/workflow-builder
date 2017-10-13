@@ -21,26 +21,10 @@ config[1].entry = {
     ...hotEntries,
     './demos/index.js'
   ],
-  demo1: [
-    ...hotEntries,
-    './demos/demo1/index.js'
-  ],
-  demo2: [
-    ...hotEntries,
-    './demos/demo2/index.js'
-  ],
-  demo3: [
-    ...hotEntries,
-    './demos/demo3/index.js'
-  ],
   demo4: [
     ...hotEntries,
     './demos/demo4/index.js'
   ],
-  demo5: [
-    ...hotEntries,
-    './demos/demo5/index.js'
-  ]
 };
 config[1].output.filename = '[name].js';
 config[1].output.path = path.join(__dirname, 'demos');
