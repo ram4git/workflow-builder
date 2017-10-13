@@ -116,13 +116,13 @@ h1.App-title {
     }
   }
 
-  .controls {
-    flex: 0 0 20rem;
-    max-width: 20rem;
-    overflow: auto;
-    margin-bottom: 120px;
-    display: none; /* REMOVE LATER WHEN EDIT IS ALLOWED */
-  }
+  // .controls {
+  //   flex: 0 0 20rem;
+  //   max-width: 20rem;
+  //   overflow: auto;
+  //   margin-bottom: 120px;
+  //   position: relative;
+  // }
 
   .savedFlows {
     position: fixed;
@@ -173,9 +173,9 @@ h1.App-title {
   }
 }
 
-.bottonGroup {
+.buttonGroup {
   position: absolute;
-  left: 1200px;
+  right: 40px;
   top: 80px;
 }
 
